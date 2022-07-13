@@ -13,7 +13,7 @@
 
 .menu__item:hover {
    text-decoration: none;
-   background-color: rgb(92, 216, 113);
+   background-color: blue;
    border-radius: 10px;
 }
 
