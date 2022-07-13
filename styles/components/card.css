@@ -1,0 +1,35 @@
+.card {
+   border: 2px solid rgb(92, 216, 113);
+   padding: 15px;
+   border-radius: 15px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   height: 100%;
+}
+
+.card:hover {
+   border: 2px solid #000;
+   padding: 15px;
+   border-radius: 15px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   height: 100%;
+   transition: 1s;
+   background-color: rgb(161, 159, 159);
+
+}
+
+.card-description {
+   flex: 1;
+}
+
+.card-image>img {
+   border: 10px solid rgb(92, 216, 113);
+   width: 50%;
+   border-radius: 50%;
+   margin: 0 auto;
+}

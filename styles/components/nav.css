@@ -1,0 +1,139 @@
+.menu__box {
+   list-style: none;
+   display: flex;
+}
+
+.menu__item {
+   color: #000;
+   display: inline-block;
+   padding: 9px;
+   font-size: 16px;
+
+}
+
+.menu__item:hover {
+   text-decoration: none;
+   background-color: rgb(92, 216, 113);
+   border-radius: 10px;
+}
+
+#menu__toggle {
+   display: none;
+}
+
+/* Стили для средних экранов (дисплей максимум 991 пикселей) */
+@media (max-width: 991px) {
+   .aside-left, .aside-right {
+      min-width: 150px;
+   }
+
+}
+
+
+/* Стили для маленьких экранов (дисплей максимум 767 пикселей) */
+@media (max-width: 767px) {
+   .aside-left, .aside-right {
+      font-size: 16px;
+   }
+}
+
+/* Стили для очень маленьких экранов (дисплей максимум 575 пикселей) */
+@media (max-width: 575px) {
+   #menu__toggle {
+      opacity: 0;
+   }
+
+   /* стилизуем кнопку */
+   .menu__btn {
+      display: flex;
+      /* используем flex для центрирования содержимого */
+      align-items: center;
+      /* центрируем содержимое кнопки */
+      position: absolute;
+      top: 35px;
+      right: 20px;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      z-index: 1;
+   }
+
+   /* добавляем "гамбургер" */
+   .menu__btn>span,
+   .menu__btn>span::before,
+   .menu__btn>span::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #616161;
+   }
+
+   .menu__btn>span::before {
+      content: '';
+      top: -8px;
+   }
+
+   .menu__btn>span::after {
+      content: '';
+      top: 8px;
+   }
+
+   /* контейнер меню */
+   .menu__box {
+      display: block;
+      position: fixed;
+      visibility: hidden;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 80px 0;
+      list-style: none;
+      text-align: center;
+      background-color: #ECEFF1;
+      box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+   }
+
+   /* элементы меню */
+   .menu__item {
+      display: block;
+      padding: 12px 24px;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 1s;
+   }
+
+   .menu__item:hover {
+      background-color: rgb(161, 159, 159);
+      color: rgb(5, 102, 5);
+      transition: all 1s;
+   }
+
+   #menu__toggle:checked~.menu__btn>span {
+      transform: rotate(45deg);
+   }
+
+   #menu__toggle:checked~.menu__btn>span::before {
+      top: 0;
+      transform: rotate(0);
+   }
+
+   #menu__toggle:checked~.menu__btn>span::after {
+      top: 0;
+      transform: rotate(90deg);
+   }
+
+   #menu__toggle:checked~.menu__box {
+      visibility: visible;
+      left: 0;
+   }
+
+   .main .row {
+      display: block;
+   }
+}
